@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Filters from "../components/Filters/Filters";
 import Cards from "../components/Card/Cards";
+import Pagination from "../components/Pagination/Pagination";
+import Search from "../components/Search/Search";
 /* import Card from '../components/Card/Card'
 import Cards from '../components/Card/Cards'
 import SearchBar from '../components/Search/SearchBar'
@@ -24,6 +26,7 @@ const HomePage = () => {
   return (
     <div className="">
       <h1 className="text-center ubuntu  my-4 text-primary">Rick and Morty </h1>
+      <Search/>
       <div className="container">
         <div className="row">
           <div className="col-3">
@@ -38,6 +41,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <Pagination pageNumber={pageNumber } setPageNumber={setPageNumber}/>
     </div>
   );
 };

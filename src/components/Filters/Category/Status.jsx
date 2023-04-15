@@ -14,7 +14,7 @@ const Status = ({setStatus,setPageNumber}) => {
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
-              aria-expanded="false"
+              aria-expanded="true"
               aria-controls="collapseTwo"
             >
               Status
@@ -22,7 +22,7 @@ const Status = ({setStatus,setPageNumber}) => {
           </h2>
           <div
             id="collapseTwo"
-            className="accordion-collapse collapse"
+            className="accordion-collapse collapse show"
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
           >

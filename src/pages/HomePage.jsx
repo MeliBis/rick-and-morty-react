@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Filters from "../components/Filters/Filters";
 import Cards from "../components/Card/Cards";
 import Pagination from "../components/Pagination/Pagination";
@@ -10,11 +10,12 @@ const HomePage = () => {
   let [ search, setSearch] = useState("")
   let [status,setStatus] = useState("")
   let [gender, setGender] = useState("")
+  let [species, setSpecies] = useState("")
 
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
     (async function () {
@@ -25,11 +26,12 @@ const HomePage = () => {
 
   return (
     <div className="">
-      <h1 className="text-center ubuntu  my-4 text-primary">Rick and Morty </h1>
+    
       <Search setPageNumber={setPageNumber} setSearch={setSearch}/>
       <div className="container">
         <div className="row">
             <Filters 
+            setSpecies={setSpecies}
             setGender={setGender} 
             setStatus={setStatus} 
             setPageNumber={setPageNumber}/>

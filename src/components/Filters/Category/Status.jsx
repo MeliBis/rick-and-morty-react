@@ -1,8 +1,8 @@
 import React from 'react'
 import FilterBTN from './FilterBTN'
 
-const Status = () => {
-    let status = ["Alive", "Dead", "Uknown"]
+const Status = ({setStatus,setPageNumber}) => {
+    let status = ["Alive", "Dead", "Unknown"]
 
   return (
     <div>
@@ -26,9 +26,15 @@ const Status = () => {
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body">
+            <div className="accordion-body d-flex flex-wrap gap-3">
                 {status.map((item, index)=> 
-                (<FilterBTN key={index}name='status' index={index}item={item}/>))}
+                (<FilterBTN 
+                  task={setStatus}
+                  setPageNumber={setPageNumber} 
+                  key={index}
+                  name='status' 
+                  index={index}
+                  item={item}/>))}
             </div>
           </div>
         </div>
